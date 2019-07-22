@@ -1,0 +1,23 @@
+---
+  - name: Copy default Jail
+    template:
+      src: templates/fail2ban.local.j2
+      dest: "{{ fail2ban_jail_dir }}/fail2ban.local"
+    ignore_errors: yes
+
+  - name: Copy filters
+    template:
+      src: templates/{{ item }}_filter.conf.j2
+      dest: "{{ fail2ban_jail_dir }}/{{ item }}.conf"
+    with_items: "{{ fail2ban_modules }}"
+    ignore_errors: yes
+      
+  - name: Copy jails
+    template:
+      src: templates/{{ item }}_jail.local.j2
+      dest: "{{ fail2ban_jail_dir }}/{{ item }}.local"
+    with_items: "{{ fail2ban_modules }}"
+    ignore_errors: yes
+    notify:
+    - Restart Fail2Ban
+...

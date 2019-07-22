@@ -1,0 +1,24 @@
+---
+# --- fail2ban ---
+fail2ban_jail_dir: /etc/fail2ban/jail.d
+fail2ban_filter_dir: /etc/fail2ban/filter.d
+fail2ban_config_loglevel: 3 #1 (error), 2 (warn), 3 (info), or 4 (debug)
+fail2ban_config_logtarget: SYSLOG #STDOUT STDERR SYSLOG FILE
+fail2ban_config_destemail: fail2ban@example.com
+fail2ban_config_sender: fail2ban@example.com
+fail2ban_config_sendername: fail2ban
+fail2ban_config_ignoreip: 127.0.0.1/8 1.2.3.4
+fail2ban_config_bantime: 3600
+fail2ban_config_findtime: 1800
+fail2ban_config_maxretry: 10
+
+
+# --- Log Paths ---
+logs_gitea: /opt/gitea/data/logs/gitea.log
+logs_sshd: /var/log/secure
+logs_pam: /var/log/secure
+
+# --- Modules ---
+fail2ban_modules: 
+  - ssh
+  - pam

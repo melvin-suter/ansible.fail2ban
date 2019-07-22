@@ -1,0 +1,11 @@
+---
+# file: test/playbook_gitea.yml
+- name: Install and configure fail2ban
+  hosts: 
+  - server.example.com
+  roles:
+    - role: melvin_suter.fail2ban
+  vars:
+    
+
+...

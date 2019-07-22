@@ -1,0 +1,9 @@
+[pam-generic.conf]
+enabled = true
+port = all
+maxretry = 10
+findtime = 3600
+bantime = 900
+action = iptables-allports
+filter = pam-generic
+logpath  = {{ logs_pam }}
