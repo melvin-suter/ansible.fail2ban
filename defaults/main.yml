@@ -28,5 +28,4 @@ fail2ban_motd_roles:
 - melvin_suter.fail2ban
 fail2ban_motd_commands:
 - systemctl status fail2ban
-motd_roles: "{{ motd_roles + fail2ban_motd_roles }}"
-motd_commands: "{{ motd_commands + fail2ban_motd_commands }}"
+
