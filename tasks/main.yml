@@ -9,6 +9,6 @@
 - import_tasks: config.yml
 
 # motd
-- set_fact: motd_roles="{{ motd_roles + fail2ban_motd_roles }}"
-- set_fact: motd_commands="{{ motd_commands + fail2ban_motd_commands }}"
+- set_fact: motd_roles="{{ ansible_facts['motd_roles'] + fail2ban_motd_roles }}"
+- set_fact: motd_commands="{{ ansible_facts['motd_commands'] + fail2ban_motd_commands }}"
 ...
