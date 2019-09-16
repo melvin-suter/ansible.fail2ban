@@ -8,7 +8,4 @@
 # fail2ban configuration
 - import_tasks: config.yml
 
-# motd
-- set_fact: motd_roles="{{ hostvar[inventory_hostname]['motd_roles'] + fail2ban_motd_roles }}"
-- set_fact: motd_commands="{{ hostvar[inventory_hostname]['motd_commands'] + fail2ban_motd_commands }}"
 ...
